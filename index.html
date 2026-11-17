@@ -1,14 +1,11 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Copyright <2017> <www.Agilesoft.com.au>
+    <!-- Copyright <2017> <www.Agilesoft.com.au>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
 to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, 
@@ -21,68 +18,50 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTH
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 
+    <title>What finger am I holding</title>
+    <style>
+      #resultDiv {
+        color: blue;
+        text-align: center;
+        font-size: 5em;
+      }
 
-<title>What finger am I holding</title>
-<style>
-
-#resultDiv{
-color:blue;
-text-align: center;
-font-size: 5em;
-}
-
-#inputArea
-{
-color:black;
-text-align: center;
-font-size: 5em;
-
-}
+      #inputArea {
+        color: black;
+        text-align: center;
+        font-size: 5em;
+      }
     </style>
-                
+  </head>
 
-</head>
+  <body>
+    <div id="inputArea">
+      <p>How many fingers am I holding up ?</p>
+      <input type="text" id="guess" />
+      <button id="submit">Submit</button>
+      <br />
+    </div>
 
-<body>
-<div id="inputArea">
-<p>How many fingers am I holding up ? </p>
-<input type="text" id="guess">
-<button id="submit">Submit</button>
-<br>
-</div>
+    <div id="resultDiv">
+      <p id="result"></p>
+    </div>
 
-<div id=resultDiv>
-<p id="result"></p>
+    <script type="text/javascript">
+      document.getElementById("submit").onclick = function () {
+        var randomNumber = Math.random();
 
-</div>
-    
-<script type="text/javascript">
+        randomNumber = randomNumber * 6;
 
+        randomNumber = Math.floor(randomNumber);
 
-
-document.getElementById("submit").onclick=function(){
-var randomNumber =  Math.random();
-
-randomNumber = randomNumber * 6;
-
-randomNumber = Math.floor (randomNumber);
-
-
-
-if (randomNumber==document.getElementById("guess").value){
-
-    document.getElementById("result").innerHTML="Correct !"+ " " + randomNumber+" " + "is the correct finger";
-
-} else {
-
-document.getElementById("result").innerHTML="Sorry please try again, correct finger is:" + " " + randomNumber;
-
-}
-
-}
-      
+        if (randomNumber == document.getElementById("guess").value) {
+          document.getElementById("result").innerHTML =
+            "Correct !" + " " + randomNumber + " " + "is the correct finger";
+        } else {
+          document.getElementById("result").innerHTML =
+            "Sorry please try again, correct finger is:" + " " + randomNumber;
+        }
+      };
     </script>
-
-    </body>
-
+  </body>
 </html>
