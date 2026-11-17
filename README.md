@@ -4,7 +4,7 @@ Guessing game where you try to guess how many fingers the computer is showing. A
 
 Yes, computers don't have fingers!
 
-## Live Demo : [Play Guess Correct Finger](https://1amal.github.io/guesscorrectfinger/)
+## Live Demo : [Play Guess Correct Finger](http://amalk.au/guess-correct-finger-game/)
 
 ## Features
 
